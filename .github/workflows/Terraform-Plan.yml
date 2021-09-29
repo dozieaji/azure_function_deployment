@@ -3,14 +3,14 @@ name: "Terraform-Plan-Infra-Plan"
 on:
   push:
     branches:
-      - FeatureBranch1
+      - feature
 
 jobs:
   terraform:
     name: "Terraform"
     runs-on: ubuntu-latest
     env:	
-      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_KEY_ID }}
+      AWS_ACCESS_KEY_ID: "'${{ secrets.AWS_KEY_ID }}'"
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRETE_ID }}
       AWS_REGION: 'us-east-1'
 
